@@ -8,9 +8,13 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "build:preview": "vue-cli-service build --mode preview",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
     "lint:nofix": "vue-cli-service lint --no-fix",
-    "postinstall": "opencollective-postinstall"
+    "postinstall": "opencollective-postinstall && electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
   },
+  "main": "background.js",
   "dependencies": {
     "@antv/data-set": "^0.10.2",
     "ant-design-vue": "1.5.0-rc.6",
@@ -48,6 +52,8 @@
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.12.2",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "electron": "^9.0.0",
+    "electron-devtools-installer": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-html": "^5.0.0",
     "eslint-plugin-vue": "^5.2.3",
@@ -55,6 +61,8 @@
     "less-loader": "^5.0.0",
     "opencollective": "^1.0.3",
     "opencollective-postinstall": "^2.0.2",
+    "spectron": "^11.0.0",
+    "vue-cli-plugin-electron-builder": "~2.0.0-rc.4",
     "vue-svg-icon-loader": "^2.1.1",
     "vue-template-compiler": "^2.6.10",
     "webpack-theme-color-replacer": "^1.2.17"
